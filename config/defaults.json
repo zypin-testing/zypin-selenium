@@ -1,0 +1,22 @@
+{
+  "_description": "Default configuration for Selenium package - Grid server and test execution settings",
+  "_todos": [
+    "Add test execution configuration options",
+    "Define browser and timeout defaults",
+    "Set up parallel execution limits",
+    "Configure retry and window size settings"
+  ],
+  "jarFile": "selenium-server-4.35.0.jar",
+  "jarUrl": "https://github.com/SeleniumHQ/selenium/releases/download/selenium-4.35.0/selenium-server-4.35.0.jar",
+  "port": 8422,
+  "host": "localhost",
+  "maxSessions": 5,
+  "logLevel": "INFO",
+  "gridUrl": "http://localhost:8422",
+  "browser": "chrome",
+  "headless": false,
+  "timeout": 30000,
+  "parallel": 1,
+  "retries": 0,
+  "windowSize": "1920x1080"
+}

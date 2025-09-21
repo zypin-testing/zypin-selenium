@@ -1,0 +1,46 @@
+{
+  "_description": "Cucumber BDD template package configuration for Zypin Framework",
+  "_todos": [
+    "All core dependencies and structure are now complete",
+    "Shared library integration is working",
+    "Ready for project creation"
+  ],
+  "name": "{{PROJECT_NAME}}",
+  "version": "1.0.0",
+  "description": "Cucumber BDD test project created with Zypin Framework",
+  "main": "features",
+  "scripts": {
+    "test": "zypin run --input features/",
+    "test:demo": "zypin run --input features/demo.feature",
+    "test:headless": "zypin run --input features/ --headless",
+    "test:firefox": "zypin run --input features/ --browser firefox",
+    "test:parallel": "zypin run --input features/ --parallel 2"
+  },
+  "keywords": [
+    "testing",
+    "selenium",
+    "webdriver",
+    "cucumber",
+    "bdd",
+    "gherkin",
+    "automation",
+    "zypin"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@zypin/selenium": "https://github.com/zypin-testing/zypin-selenium"
+  },
+  "zypin": {
+    "package": "selenium",
+    "template": "cucumber-bdd",
+    "config": {
+      "browser": "chrome",
+      "headless": false,
+      "timeout": 30000,
+      "parallel": 1,
+      "retries": 0,
+      "windowSize": "1920x1080"
+    }
+  }
+}

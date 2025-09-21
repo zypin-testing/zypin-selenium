@@ -1,0 +1,43 @@
+{
+  "_description": "Selenium plugin package for Zypin Testing Framework - Standard interface implementation",
+  "_todos": [
+    "Create standard plugin interface in index.js",
+    "Update all path references for new structure",
+    "Add peer dependency on @zypin/core",
+    "Update template package.json references",
+    "Test plugin loading and functionality"
+  ],
+  "name": "@zypin/selenium",
+  "version": "0.1.0",
+  "description": "Selenium Grid integration plugin for Zypin testing framework",
+  "keywords": [
+    "selenium",
+    "webdriver",
+    "testing",
+    "automation",
+    "grid",
+    "zypin",
+    "plugin"
+  ],
+  "author": "",
+  "license": "MIT",
+  "main": "index.js",
+  "bin": {
+    "cucumber-js": "./node_modules/.bin/cucumber-js"
+  },
+  "exports": {
+    "./webdriver": "./lib/webdriver.js",
+    "./cucumber-bdd/step-definitions": "./lib/cucumber-bdd/step-definitions/index.js",
+    "./cucumber-bdd/support": "./lib/cucumber-bdd/support/index.js"
+  },
+  "scripts": {
+    "test": "node health.js"
+  },
+  "peerDependencies": {
+    "@zypin/core": "https://github.com/zypin-testing/zypin-core.git"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^12.2.0",
+    "selenium-webdriver": "^4.35.0"
+  }
+}
