@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zypin Test Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .form-group { margin: 10px 0; }
+        label { display: block; margin-bottom: 5px; }
+        input, select, textarea { width: 100%; padding: 8px; margin-bottom: 10px; }
+        button { padding: 10px 20px; margin: 5px; }
+        .welcome-message { background: #e8f5e8; padding: 10px; margin: 10px 0; }
+        .navigation { margin: 20px 0; }
+        .navigation a { margin-right: 15px; }
+        .result { background: #f0f0f0; padding: 10px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="main-title">Zypin Test Page</h1>
+        
+        <div class="welcome-message">
+            <p class="welcome-text">Welcome to the Zypin test page! This page contains all the elements needed to test the new step definitions.</p>
+        </div>
+
+        <div class="navigation">
+            <h2>Navigation</h2>
+            <a href="page2.html" id="page2-link">Go to Page 2</a>
+            <a href="page3.html" id="page3-link">Go to Page 3</a>
+            <a href="#form-section" id="form-link">Go to Form</a>
+        </div>
+
+        <div id="form-section">
+            <h2>Test Form</h2>
+            <form id="test-form" name="testForm">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password">
+                </div>
+                
+                <div class="form-group">
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="country">Country:</label>
+                    <select id="country" name="country">
+                        <option value="">Select a country</option>
+                        <option value="us">United States</option>
+                        <option value="ca">Canada</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="au">Australia</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Enter your message"></textarea>
+                </div>
+                
+                <button type="submit" id="submit-btn" name="submit">Submit Form</button>
+                <button type="button" id="clear-btn" name="clear">Clear Form</button>
+            </form>
+        </div>
+
+        <div class="result">
+            <h3>Test Results</h3>
+            <p id="result-text">Form results will appear here after submission.</p>
+        </div>
+
+        <div>
+            <h3>JavaScript Test Section</h3>
+            <button id="js-test-btn" onclick="testJavaScript()">Test JavaScript</button>
+            <div id="js-result"></div>
+        </div>
+    </div>
+
+    <script>
+        // Form submission handler
+        document.getElementById('test-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const result = {};
+            for (let [key, value] of formData.entries()) {
+                result[key] = value;
+            }
+            document.getElementById('result-text').textContent = 'Form submitted successfully! Data: ' + JSON.stringify(result);
+        });
+
+        // Clear form handler
+        document.getElementById('clear-btn').addEventListener('click', function() {
+            document.getElementById('test-form').reset();
+            document.getElementById('result-text').textContent = 'Form cleared.';
+        });
+
+        // JavaScript test function
+        function testJavaScript() {
+            const result = {
+                title: document.title,
+                url: window.location.href,
+                timestamp: new Date().toISOString(),
+                userAgent: navigator.userAgent
+            };
+            document.getElementById('js-result').innerHTML = '<pre>' + JSON.stringify(result, null, 2) + '</pre>';
+        }
+
+        // Add some dynamic content for testing
+        setTimeout(function() {
+            const dynamicDiv = document.createElement('div');
+            dynamicDiv.id = 'dynamic-content';
+            dynamicDiv.className = 'welcome-message';
+            dynamicDiv.innerHTML = '<p>This is dynamically added content for testing!</p>';
+            document.querySelector('.container').appendChild(dynamicDiv);
+        }, 2000);
+    </script>
+</body>
+</html>

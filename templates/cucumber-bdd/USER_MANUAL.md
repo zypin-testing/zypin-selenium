@@ -25,6 +25,9 @@ A comprehensive guide to using Zypin's Cucumber step definitions for web automat
 | Step | Parameters | Example |
 |------|------------|---------|
 | `I navigate to {string}` | URL | `I navigate to "https://example.com"` |
+| `I go back to the previous page` | None | `I go back to the previous page` |
+| `I go forward to the next page` | None | `I go forward to the next page` |
+| `I reload the page` | None | `I reload the page` |
 
 ### Click Actions
 | Step | Parameters | Example |
@@ -70,6 +73,19 @@ A comprehensive guide to using Zypin's Cucumber step definitions for web automat
 | `I submit the form {string}` | CSS selector | `I submit the form "#login-form"` |
 | `I press Enter in {string}` | CSS selector | `I press Enter in "#search-input"` |
 | `I clear {string}` | CSS selector | `I clear "#username"` |
+| `I select {string} from {string}` | Value, Selector | `I select "Option 1" from "#dropdown"` |
+| `I fill the form with:` | Data table | `I fill the form with: \| field \| value \|` |
+| `I execute JavaScript {string}` | Script | `I execute JavaScript "return document.title"` |
+
+### Information Gathering
+| Step | Parameters | Example |
+|------|------------|---------|
+| `I take a screenshot` | None | `I take a screenshot` |
+| `I take a screenshot named {string}` | Filename | `I take a screenshot named "test.png"` |
+| `I should see the current URL is {string}` | URL | `I should see the current URL is "https://example.com"` |
+| `I should see the current URL contains {string}` | URL part | `I should see the current URL contains "example"` |
+| `I should see the page title is {string}` | Title | `I should see the page title is "Home Page"` |
+| `I get the text from {string}` | Selector | `I get the text from ".message"` |
 
 ---
 
