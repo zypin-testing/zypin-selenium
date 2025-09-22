@@ -31,6 +31,18 @@
       "parallel": 1,
       "retries": 0,
       "windowSize": "1920x1080"
+    },
+    "help": {
+      "examples": [
+        "zypin run --input test.js",
+        "zypin run --input tests/",
+        "zypin run --input test1.js,test2.js"
+      ],
+      "nextSteps": [
+        "Start servers: zypin start --packages selenium",
+        "Run tests: zypin run --input test.js",
+        "Run with options: zypin run --input test.js --browser firefox --headless"
+      ]
     }
   }
 }

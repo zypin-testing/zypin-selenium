@@ -41,6 +41,18 @@
       "parallel": 1,
       "retries": 0,
       "windowSize": "1920x1080"
+    },
+    "help": {
+      "examples": [
+        "zypin run --input features/",
+        "zypin run --input features/demo.feature",
+        "zypin run --input features/login.feature,features/checkout.feature"
+      ],
+      "nextSteps": [
+        "Start servers: zypin start --packages selenium",
+        "Run tests: zypin run --input features/",
+        "Run with options: zypin run --input features/ --browser firefox --headless"
+      ]
     }
   }
 }
