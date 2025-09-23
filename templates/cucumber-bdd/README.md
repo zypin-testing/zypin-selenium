@@ -1,127 +1,58 @@
 # Cucumber BDD Template
 
-A BDD (Behavior-Driven Development) test project created with the Zypin Testing Framework using Cucumber and Selenium WebDriver.
+## Why Use This Template?
 
-## Getting Started
+### 🎯 **Write Tests in Plain English**
+- Use natural language (Gherkin) that anyone can understand
+- Business stakeholders can read and validate your tests
+- No need to learn complex programming syntax
 
-### Prerequisites
-- Node.js 16+
-- Java 11+ (for Selenium Grid)
-- Zypin Framework
+### ⚡ **Get Started in Minutes**
+- Pre-built step definitions for common web actions
+- Ready-to-run example tests
+- No complex setup or configuration needed
 
-### Installation
+### 🔧 **Built-in Debugging**
+- Automatic screenshots on test failures
+- Detailed error messages with context
+- Built-in logging for every action
 
-1. Create a new project from this template:
+### 🌐 **Cross-Browser Testing**
+- Test on Chrome, Firefox, and other browsers
+- Run tests in headless mode for CI/CD
+- Parallel execution for faster results
+
+### 📈 **Scalable & Maintainable**
+- Reusable step definitions across all tests
+- Data-driven testing with tables
+- Easy to extend with custom steps
+
+## What You Get
+
+- **BDD Testing**: Write tests using Given-When-Then scenarios
+- **Web Automation**: Automate browser interactions with Selenium
+- **Multiple Browsers**: Test across different browsers
+- **Screenshots**: Automatic failure screenshots for debugging
+- **Flexible Selectors**: CSS, ID, Name, XPath, and Link Text selectors
+
+## Quick Start
+
 ```bash
-zypin create-project my-bdd-tests --template selenium/cucumber-bdd
-cd my-bdd-tests
-```
+# Create project
+zypin create-project my-tests --template selenium/cucumber-bdd
+cd my-tests
 
-2. Install dependencies:
-```bash
+# Install dependencies
 npm install
-```
 
-3. Start Selenium Grid:
-```bash
+# Start Selenium Grid
 zypin start --packages selenium
-```
 
-4. Run tests:
-```bash
+# Run tests
 zypin run --input features/
 ```
 
-## Usage
+## Need Help?
 
-### Basic Commands
-
-```bash
-# Run all feature files
-zypin run --input features/
-
-# Run specific feature file
-zypin run --input features/demo.feature
-
-# Run in headless mode
-zypin run --input features/ --headless
-
-# Run with different browser
-zypin run --input features/ --browser firefox
-
-# Run with custom timeout
-zypin run --input features/ --timeout 60000
-
-# Run with tags
-zypin run --input features/ --tags @smoke
-```
-
-### Configuration
-
-Zypin uses a 3-tier configuration system (CLI parameters override user config, which overrides defaults):
-
-1. **Package defaults** (built into the framework)
-2. **User project config** (in your `package.json`)
-3. **CLI parameters** (highest priority)
-
-Configure your tests in `package.json`:
-
-```json
-{
-  "zypin": {
-    "config": {
-      "browser": "chrome",
-      "headless": false,
-      "timeout": 30000,
-      "parallel": 1,
-      "retries": 0,
-      "windowSize": "1920x1080"
-    }
-  }
-}
-```
-
-## Project Structure
-
-```
-├── features/              # Gherkin feature files
-│   └── demo.feature      # Example feature file
-├── step-definitions/      # Step implementation files
-│   └── index.js          # Step definitions
-├── support/              # Test setup and configuration
-│   └── index.js          # World setup and hooks
-├── package.json          # Dependencies and config
-└── README.md             # This file
-```
-
-## Test Example
-
-The included test demonstrates:
-- BDD scenario structure with Given-When-Then
-- WebDriver integration with Cucumber
-- Page navigation and element interaction
-- Test verification and cleanup
-
-## Troubleshooting
-
-**Java not found:**
-- Install Java 11+ from [Adoptium](https://adoptium.net/)
-
-**Grid not running:**
-- Run `zypin start --packages selenium`
-
-**Debug mode:**
-```bash
-zypin run --input features/ --debug
-```
-
-**Step definition not found:**
-- Check step definition files are in `step-definitions/` directory
-
-## Next Steps
-
-- Add more feature files
-- Implement page object pattern
-- Add data-driven tests with scenario outlines
-- Set up CI/CD integration
-- Add custom reporting
+- **Writing tests**: See `WRITE_GUIDE.md`
+- **Debugging**: See `DEBUG_GUIDE.md`
