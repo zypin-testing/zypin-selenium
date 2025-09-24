@@ -41,7 +41,8 @@
       "nextSteps": [
         "Start servers: zypin start --packages selenium",
         "Run tests: zypin run --input test.js",
-        "Run with options: zypin run --input test.js --browser firefox --headless"
+        "Run with options: zypin run --input test.js --browser firefox --headless",
+        "Get help: zypin guide"
       ]
     }
   }
